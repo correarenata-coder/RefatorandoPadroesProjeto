@@ -20,3 +20,11 @@ rad.json
 *.flf
 #Test results file
 TestResults.xml
+/.vs/RefatorandoPadroesProjeto.slnx/v18
+/src/capitulo01/.vs/capitulo01.slnx/FileContentIndex
+/src/capitulo01/.vs/capitulo01.slnx/v18
+/src/capitulo01/capitulo01/obj/Debug/net10.0
+/src/capitulo01/capitulo01/obj
+/.vs/RefatorandoPadroesProjeto.slnx/FileContentIndex
+/.vs/slnx.sqlite
+*.json
