@@ -4,4 +4,5 @@
   </Folder>
   <Project Path="capitulo01/capitulo01.csproj" />
   <Project Path="capitulo02/capitulo02.csproj" Id="62f6f4b7-d230-4a27-b7c0-855851040d8c" />
+  <Project Path="capitulo03/capitulo03.csproj" Id="fad96e51-0700-474c-a00d-d8a49654efdb" />
 </Solution>
