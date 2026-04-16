@@ -12,33 +12,39 @@ padrões	descritos	pela	Gangue	dos	Quatros , porém avlia caracteristicas da lin
 
 ## 🧠 Pensamento Orientado a Objetos
 
-** Mensagem e estado ** 
+### 🔹 Mensagem e Estado
 
-Estado é composto por seus atributos, representam os dados que o objeto possui.O estado de um objeto
-fica escondigo e isso é um grando motivador da absração de dados em objetos.
-Para acionar as mudanças de estado, o objeto precisa receber mensagens, ou seja, chamar seus métodos. O comportamento de um objeto é definido por seus métodos, que são as ações que ele pode realizar.
+- **Estado**: composto pelos atributos (dados) de um objeto  
+- **Comportamento**: definido pelos métodos (ações) do objeto  
 
+O estado de um objeto fica **encapsulado**, sendo um dos principais motivadores da **abstração**.
 
-## ## 🧩 Padrões de Projeto e Orientação a Objetos com C#
+Para alterar o estado, utilizamos **mensagens**, ou seja, chamadas de métodos.
+
+---
+
+## 🧩 Padrões de Projeto e Orientação a Objetos com C#
 
 O C# é uma linguagem:
 
-Estática (fortemente tipada)
-Orientada a objetos
-Com suporte completo a herança, polimorfismo e interfaces
+- ✔️ Estática (fortemente tipada)  
+- ✔️ Orientada a objetos  
+- ✔️ Com suporte a herança, polimorfismo e interfaces  
 
-Em linguagens estáticas, você precisa criar mais abstrações para permitir flexibilidade.
+👉 Em linguagens estáticas, precisamos de mais abstrações para garantir flexibilidade.
 
-👉 Em C#, isso aparece muito como:
+No C#, isso aparece como:
 
-Interfaces (IProduto, IPagamento)
-Classes base (herança)
-Polimorfismo (virtual, override)
-Injeção de dependência
+- Interfaces (`IProduto`, `IPagamento`)  
+- Classes base (herança)  
+- Polimorfismo (`virtual`, `override`)  
+- Injeção de dependência  
 
-💻 Exemplo equivalente em C#
+---
 
-<pre>
+## 💻 Exemplo de Polimorfismo em C#
+
+```csharp
 public class Livro
 {
     public virtual decimal CalcularPrecoFinal()
@@ -59,20 +65,18 @@ public class LivroPromocional : Livro
 Livro livro = new LivroPromocional();
 var preco = livro.CalcularPrecoFinal();
 
-</pre>
 
-
-Sobre C# :
+# Sobre C# :
 
 1. Validação de tipos antes de executar
 
 ✔️ Se aplica 100% ao C#
 
-C# também:
+# C# também:
 
-Valida tipos em tempo de compilação
-Evita muitos erros antes de rodar
-Exige mais estrutura (interfaces, classes, etc.)
+-- Valida tipos em tempo de compilação
+-- Evita muitos erros antes de rodar
+-- Exige mais estrutura (interfaces, classes, etc.)
 
 2. “Nem tudo é objeto”
 
