@@ -66,6 +66,9 @@ Livro livro = new LivroPromocional();
 var preco = livro.CalcularPrecoFinal();
 
 
+Console.WriteLine(preco); // Saída: 80
+```
+
 # Sobre C# :
 
 1. Validação de tipos antes de executar
