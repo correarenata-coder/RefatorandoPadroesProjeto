@@ -3,51 +3,116 @@
 ---
 ## 📌 Visão Geral
 
-Este capítulo apresenta os conceitos de refatoração e padrões de projeto, destacando a importância de manter um código limpo e organizado para facilitar a manutenção e evolução dos sistemas.
+Este capítulo apresenta os conceitos de **refatoração** e **padrões de projeto**, destacando a importância de manter um código limpo, organizado e de fácil evolução.
 ---
 
-Refatoração de acordo com  livro de Martin Fowler, "Refactoring: Improving the Design of Existing Code" (1999), é o processo de alterar um sistema de software para melhorar sua estrutura interna sem modificar seu comportamento externo. O objetivo é tornar o código mais legível, compreensível e fácil de manter.
-Ela pode ser entendida de 3 partes:
+## 🔧 O que é Refatoração?
 
-1. Melhorar o design existente
-2.Aplicar mudanças em pequenos passos
-3.Evitar deixar o sistema quebrado
----
+De acordo com o livro *Refactoring: Improving the Design of Existing Code* (1999), de **Martin Fowler**:
 
-Tecnicas de refarotação :
+> Refatoração é o processo de melhorar a estrutura interna do código sem alterar seu comportamento externo.
 
-1. Extrair método : Criar um novo método a partir de um trecho de código existente para melhorar a legibilidade e reutilização.
-2. Mover Método : Transferir um método de uma classe para outra para melhorar a coesão e reduzir o acoplamento.
-3. Mover campo : Transferir um campo de uma classe para outra para melhorar a coesão e reduzir o acoplamento.
-4. Extrair Classe : Criar uma nova classe a partir de um trecho de código existente para melhorar a organização e a responsabilidade.
+O objetivo é tornar o código:
 
----
+- Mais legível  
+- Mais compreensível  
+- Mais fácil de manter  
 
-Padrões de projetos são soluções reutilizáveis para problemas comuns de design de software. Eles fornecem uma estrutura para resolver problemas específicos de design, promovendo a reutilização e a manutenção do código.
-Dica de livro para padrões de projeto: "Design Patterns: Elements of Reusable Object-Oriented Software" (1994), de Erich Gamma, Ralph Johnson, Richard Helm e John Vlissides.
+### 📍 Princípios da refatoração
 
-Os padrões de projeto são classificados em três categorias principais:
-
-1- Criação - Padrões de criação lidam com a criação de objetos, abstraindo o processo de instanciamento e promovendo a flexibilidade e reutilização do código. Exemplos incluem Singleton, Factory Method e Abstract Factory.
-2- Estruturais - Padrões estruturais lidam com a composição de classes e objetos para formar estruturas maiores, promovendo a flexibilidade e a reutilização do código. Exemplos incluem Adapter, Composite e Decorator.
-3- Comportamentais - Padrões comportamentais lidam com a interação e a responsabilidade entre objetos, promovendo a flexibilidade e a reutilização do código. Exemplos incluem Observer, Strategy e Command.
+1. **Melhorar o design existente**  
+2. **Aplicar mudanças em pequenos passos**  
+3. **Evitar quebrar o sistema**  
 
 ---
 
-Vantagens de usar padrões de projeto:
+## 🛠️ Técnicas de Refatoração
 
-1. Reutilização de código: Padrões de projeto fornecem soluções testadas e comprovadas para problemas comuns, permitindo que os desenvolvedores reutilizem código e evitem reinventar a roda.
-2. Melhoria da comunicação: Padrões de projeto fornecem uma linguagem comum para os desenvolvedores, facilitando a comunicação e a colaboração entre equipes.
-3. Facilitação da manutenção: Padrões de projeto promovem a organização e a estrutura do código, facilitando a manutenção e a evolução dos sistemas.
-4. Flexibilidade e extensibilidade: Padrões de projeto promovem a flexibilidade e a extensibilidade do código, permitindo que os sistemas sejam adaptados e evoluídos ao longo do tempo.
-5. Melhoria da qualidade do código: Padrões de projeto promovem boas práticas de design, melhorando a qualidade do código e reduzindo a probabilidade de erros e bugs.
-6. Redução da complexidade: Padrões de projeto ajudam a reduzir a complexidade do código, tornando-o mais fácil de entender e manter.
-7. Facilitação do aprendizado: Padrões de projeto fornecem uma estrutura para aprender e entender conceitos de design de software, facilitando o aprendizado e a aplicação desses conceitos na prática.
+- **Extrair Método**  
+  Criar um novo método a partir de um trecho de código para melhorar legibilidade e reutilização.
+
+- **Mover Método**  
+  Transferir um método para outra classe, melhorando a coesão e reduzindo o acoplamento.
+
+- **Mover Campo**  
+  Transferir atributos entre classes para melhor organização.
+
+- **Extrair Classe**  
+  Criar uma nova classe para dividir responsabilidades e melhorar a estrutura do código.
 
 ---
 
-Para fazer uma boa refatoração podemos seguir os sequintes passos :
+## 🧩 O que são Padrões de Projeto?
 
-1. Identificar uma oportunidad de melhoria: Analise o código existente e identifique áreas que podem ser melhoradas em termos de legibilidade, organização ou desempenho.
-2. Entender o contexto do código: Compreenda o propósito e a funcionalidade do código que você deseja refatorar para garantir que as mudanças não afetem o comportamento externo.
-3. Alicar pequenas mudanças nos testes e códigos: Faça mudanças incrementais no código, garantindo que os testes sejam atualizados para refletir as mudanças e que o sistema continue funcionando corretamente.
+Padrões de projeto são **soluções reutilizáveis para problemas comuns** no design de software.
+
+Eles ajudam a:
+
+- Padronizar soluções  
+- Melhorar a comunicação entre desenvolvedores  
+- Facilitar manutenção e evolução  
+
+📚 Referência clássica:  
+*Design Patterns: Elements of Reusable Object-Oriented Software* (1994)
+
+---
+
+## 🗂️ Classificação dos Padrões
+
+### 🏗️ 1. Criação
+Relacionados à criação de objetos.
+
+**Exemplos:**
+- Singleton  
+- Factory Method  
+- Abstract Factory  
+
+---
+
+### 🧱 2. Estruturais
+Relacionados à organização de classes e objetos.
+
+**Exemplos:**
+- Adapter  
+- Composite  
+- Decorator  
+
+---
+
+### 🔄 3. Comportamentais
+Relacionados à comunicação entre objetos.
+
+**Exemplos:**
+- Observer  
+- Strategy  
+- Command  
+
+---
+
+## ✅ Vantagens dos Padrões de Projeto
+
+- ♻️ Reutilização de código  
+- 💬 Melhor comunicação entre equipes  
+- 🔧 Facilidade de manutenção  
+- 🔄 Flexibilidade e extensibilidade  
+- 📈 Melhoria da qualidade do código  
+- 🧠 Redução da complexidade  
+- 🎓 Facilitação do aprendizado  
+
+---
+
+## 🚀 Como fazer uma boa refatoração
+
+1. **Identifique oportunidades de melhoria**  
+   Avalie pontos de baixa legibilidade, duplicação ou complexidade.
+
+2. **Entenda o contexto do código**  
+   Garanta que você compreende o comportamento atual antes de alterar.
+
+3. **Refatore em pequenos passos**  
+   Faça mudanças incrementais e seguras.
+
+4. **Garanta cobertura de testes**  
+   Certifique-se de que o sistema continua funcionando corretamente.
+
+---
