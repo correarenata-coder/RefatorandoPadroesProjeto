@@ -30,3 +30,6 @@ TestResults.xml
 *.json
 /src/capitulo01/.vs/capitulo01.slnx/DesignTimeBuild
 /src/capitulo01/.vs/capitulo01/CopilotIndices/18.4.114.215
+/src/.vs/capitulo01.slnx/FileContentIndex
+/src/capitulo01/.vs/ProjectEvaluation
+/src/capitulo01/obj
