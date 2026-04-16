@@ -19,6 +19,8 @@ O objetivo é tornar o código:
 - Mais compreensível  
 - Mais fácil de manter  
 
+---
+
 ### 📍 Princípios da refatoração
 
 1. **Melhorar o design existente**  
