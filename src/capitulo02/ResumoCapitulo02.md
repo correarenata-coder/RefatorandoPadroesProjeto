@@ -4,6 +4,7 @@
 ## 📌 Visão Geral
 
 Este capítulo apresenta os conceitos de **refatoração** e **padrões de projeto**, destacando a importância de manter um código limpo, organizado e de fácil evolução.
+
 ---
 
 ## 🔧 O que é Refatoração?
