@@ -127,7 +127,8 @@ lista.Add("teste");
 IList<string> lista2 = new List<string>();
 </pre>
 
-4. Sobrescrita de métodos  
+4. Sobrescrita de métodos
+  
 1. Em Java: @Override C# :override
 2. Em java :  overload C# overload
 

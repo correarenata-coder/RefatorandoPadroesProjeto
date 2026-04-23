@@ -24,9 +24,11 @@ Este capítulo introduz a proposta do livro e como os conteúdos serão abordado
    - Discussão da solução  
    - Evolução do código  
 
-4. Os padrões são divididos em:
+4. Os padrões são divididos no livro em:
    - **Padrões comuns**  
+	Factory , Strategy, Template Method, Adapter
    - **Padrões situacionais**  
+	State, Builder, Decorator , Mediator
 
 ---
 
