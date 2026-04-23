@@ -38,3 +38,5 @@ TestResults.xml
 /src/capitulo02/obj
 /src/.vs/capitulo01.slnx/DesignTimeBuild
 /src/capitulo03/obj
+/src/.vs
+/src/capitulo04/obj
