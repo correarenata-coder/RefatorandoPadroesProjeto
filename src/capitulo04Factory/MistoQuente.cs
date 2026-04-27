@@ -1,0 +1,17 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace capitulo04Factory
+{
+    public class MistoQuente : Lanche
+    {
+        public MistoQuente()
+        {
+            Ingredientes.Add("Lanche  Minto  Quente");
+            Ingredientes.Add("Pão Francês");
+            Ingredientes.Add("Presunto e Mussarela na chapa");
+
+        }
+    }
+}

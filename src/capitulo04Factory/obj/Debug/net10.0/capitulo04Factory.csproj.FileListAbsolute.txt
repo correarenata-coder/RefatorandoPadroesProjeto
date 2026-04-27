@@ -1,0 +1,15 @@
+D:\Renata\Clube_Livro_Dev\RefatorandoPadroesProjeto\src\capitulo04Factory\obj\Debug\net10.0\capitulo04Factory.GeneratedMSBuildEditorConfig.editorconfig
+D:\Renata\Clube_Livro_Dev\RefatorandoPadroesProjeto\src\capitulo04Factory\obj\Debug\net10.0\capitulo04Factory.AssemblyInfoInputs.cache
+D:\Renata\Clube_Livro_Dev\RefatorandoPadroesProjeto\src\capitulo04Factory\obj\Debug\net10.0\capitulo04Factory.AssemblyInfo.cs
+D:\Renata\Clube_Livro_Dev\RefatorandoPadroesProjeto\src\capitulo04Factory\obj\Debug\net10.0\capitulo04Factory.csproj.CoreCompileInputs.cache
+D:\Renata\Clube_Livro_Dev\RefatorandoPadroesProjeto\src\capitulo04Factory\obj\Debug\net10.0\capitulo04Factory.sourcelink.json
+D:\Renata\Clube_Livro_Dev\RefatorandoPadroesProjeto\src\capitulo04Factory\bin\Debug\net10.0\capitulo04Factory.exe
+D:\Renata\Clube_Livro_Dev\RefatorandoPadroesProjeto\src\capitulo04Factory\bin\Debug\net10.0\capitulo04Factory.deps.json
+D:\Renata\Clube_Livro_Dev\RefatorandoPadroesProjeto\src\capitulo04Factory\bin\Debug\net10.0\capitulo04Factory.runtimeconfig.json
+D:\Renata\Clube_Livro_Dev\RefatorandoPadroesProjeto\src\capitulo04Factory\bin\Debug\net10.0\capitulo04Factory.dll
+D:\Renata\Clube_Livro_Dev\RefatorandoPadroesProjeto\src\capitulo04Factory\bin\Debug\net10.0\capitulo04Factory.pdb
+D:\Renata\Clube_Livro_Dev\RefatorandoPadroesProjeto\src\capitulo04Factory\obj\Debug\net10.0\capitulo04Factory.dll
+D:\Renata\Clube_Livro_Dev\RefatorandoPadroesProjeto\src\capitulo04Factory\obj\Debug\net10.0\refint\capitulo04Factory.dll
+D:\Renata\Clube_Livro_Dev\RefatorandoPadroesProjeto\src\capitulo04Factory\obj\Debug\net10.0\capitulo04Factory.pdb
+D:\Renata\Clube_Livro_Dev\RefatorandoPadroesProjeto\src\capitulo04Factory\obj\Debug\net10.0\capitulo04Factory.genruntimeconfig.cache
+D:\Renata\Clube_Livro_Dev\RefatorandoPadroesProjeto\src\capitulo04Factory\obj\Debug\net10.0\ref\capitulo04Factory.dll
