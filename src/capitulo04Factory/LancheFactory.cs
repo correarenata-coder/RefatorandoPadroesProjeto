@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace capitulo04Factory
+﻿namespace capitulo04Factory
 {
-    public class LancheFactory :LancheFactoryMethod
+    public class LancheFactory : LancheFactoryMethod
     {
         //public override Lanche CriarLanche(int tipo)
         //{

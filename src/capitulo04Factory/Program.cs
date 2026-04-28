@@ -6,7 +6,7 @@ try
 {
     LancheFactory factory = new LancheFactory();
     Lanche lanche = factory.CriarLanche(lancheEscolhido);
-   
+
     foreach (var ingrediente in lanche.Ingredientes)
         Console.WriteLine(ingrediente);
     Console.WriteLine("\nLanche montado com sucesso");

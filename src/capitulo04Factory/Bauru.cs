@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace capitulo04Factory
+﻿namespace capitulo04Factory
 {
-    public class Bauru :Lanche
+    public class Bauru : Lanche
     {
         public Bauru()
         {
