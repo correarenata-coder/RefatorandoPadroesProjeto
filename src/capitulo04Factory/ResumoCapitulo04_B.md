@@ -38,3 +38,15 @@ Use o Factory Method quando:
 - O tipo do objeto só é conhecido em tempo de execução  
 
 ---
+
+##Exemplo
+
+![Diagrama do exemplo](img/DiagramaCapitulo04Factory.png)
+
+
+Explicação:
+
+Lanche => representa o "Product" que o método de fábrica (factory method) vai criar
+Bauru, Frango, MistoQuente, Vegetariano =>representa o "ConcreteProduct", que implementa a classe Lanche 
+LancheFactoryMethod=> representa o "Creator" que declara o método de fábrica (factory method) que retorna um objeto do tipo Product (no nosso exemplo Lanche)
+LancheFactoty => Implementa a classe Creator e sobrescreve o factory method para retornar uma instância de um "ConcreteProduct"
