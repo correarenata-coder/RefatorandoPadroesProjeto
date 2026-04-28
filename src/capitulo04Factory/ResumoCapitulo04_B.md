@@ -46,7 +46,7 @@ Use o Factory Method quando:
 
 Explicação:
 
-Lanche => representa o "Product" que o método de fábrica (factory method) vai criar
-Bauru, Frango, MistoQuente, Vegetariano =>representa o "ConcreteProduct", que implementa a classe Lanche 
-LancheFactoryMethod=> representa o "Creator" que declara o método de fábrica (factory method) que retorna um objeto do tipo Product (no nosso exemplo Lanche)
-LancheFactoty => Implementa a classe Creator e sobrescreve o factory method para retornar uma instância de um "ConcreteProduct"
+1. Lanche => representa o "Product" que o método de fábrica (factory method) vai criar
+2. Bauru, Frango, MistoQuente, Vegetariano =>representa o "ConcreteProduct", que implementa a classe Lanche 
+3. LancheFactoryMethod=> representa o "Creator" que declara o método de fábrica (factory method) que retorna um objeto do tipo Product (no nosso exemplo Lanche)
+4. LancheFactoty => Implementa a classe Creator e sobrescreve o factory method para retornar uma instância de um "ConcreteProduct"
