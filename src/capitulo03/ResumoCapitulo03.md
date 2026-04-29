@@ -3,11 +3,10 @@
 ---
 ## 📌 Visão Geral
 
-Este capítulo aplicar	alguns	dos
-padrões	descritos	pela	Gangue	dos	Quatros , porém avlia caracteristicas da linguagem Java 
+Neste capítulo, são aplicados alguns dos padrões descritos pela **Gangue dos Quatro (GoF)**, avaliando também características da linguagem Java e sua relação com o paradigma orientado a objetos.
 
+> ⚠️ **Observação:** Embora o livro utilize **Java**, os conceitos serão adaptados para **C#** sempre que fizer sentido.
 
-> ⚠️ **Observação:** Embora o livro utilize **Java** vou adaptar o que achar interessante para o C#.
 ---
 
 ## 🧠 Pensamento Orientado a Objetos
@@ -68,30 +67,32 @@ var preco = livro.CalcularPrecoFinal();
 
 Console.WriteLine(preco); // Saída: 80
 ```
+👉 O mesmo tipo (Livro) assume comportamentos diferentes dependendo da implementação concreta.
 
-# Sobre C# :
+"""# ⚙️ Tipagem no C#
 
-1. Validação de tipos antes de executar
+## ✔️ Validação em tempo de compilação
 
-✔️ Se aplica 100% ao C#
+- **Detecta erros antes da execução**: O compilador verifica tipos e sintaxe antes do programa rodar.
+- **Aumenta a segurança do código**: Garante que os dados sejam manipulados de forma previsível.
+- **Exige maior estrutura**: Uso de interfaces, classes e contratos para definir o comportamento do sistema.
 
-# C# também:
+---
 
--- Valida tipos em tempo de compilação
--- Evita muitos erros antes de rodar
--- Exige mais estrutura (interfaces, classes, etc.)
 
-2. “Nem tudo é objeto”
+## ⚖️ “Nem tudo é objeto”
 
-✔️ Também se aplica ao C# (com uma diferença importante)
 
-🔹 Em Java:
-int não é objeto
-Integer é objeto
-🔹 Em C#:
-int é um tipo valor (struct), não um objeto direto
-Mas pode ser tratado como objeto via boxing
+### 🔹 Comparação Java vs C#
 
+**Java:**
+- `int` não é objeto.
+- `Integer` é objeto.
+
+**C#:**
+- `int` é um tipo valor (`struct`).
+- Pode ser tratado como objeto via **boxing**.
+- 
 <pre>
 int x = 1;
 
@@ -109,7 +110,7 @@ int x = 1;
 x.ToString(); // ✅ funciona
 </pre>
 
-3. Polimorfismo
+## Polimorfismo
 Igual ao Java
 <pre>
 object variavel = "texto";
@@ -127,11 +128,15 @@ lista.Add("teste");
 IList<string> lista2 = new List<string>();
 </pre>
 
-4. Sobrescrita de métodos
-  
-1. Em Java: @Override C# :override
-2. Em java :  overload C# overload
+## Sobrescrita vs Sobrecarga
 
+**Override (sobrescrita)** → Altera o comportamento herdado.
+
+**Overload (sobrecarga)** → Múltiplas versões do mesmo método.
+
+* **Em Java:** `@Override` | **Em C#:** `override`
+* **Em Java:** Overload | **Em C#:** Overload
+* 
 <pre>
 public class Estudante
 {
@@ -154,7 +159,7 @@ public override string ToString()
 }
 </pre>
 
-Interfaces e classes abstratas
+## Interfaces e classes abstratas
 <pre>
 public interface IArma
 {
@@ -172,7 +177,7 @@ public class Adaga : IArma
 }
 </pre>
 
-Classe abstrata:
+## Classe abstrata
 <pre>
 public abstract class Arma
 {

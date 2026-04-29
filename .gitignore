@@ -41,3 +41,5 @@ TestResults.xml
 /src/.vs
 /src/capitulo04/obj
 /src/capitulo04Factory/obj
+[Bb]in/
+[Oo]bj/
