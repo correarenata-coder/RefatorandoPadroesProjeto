@@ -262,6 +262,7 @@ public class Cachorro : IAnimal
 </pre>
 
 A classe é obrigada a implementar tudo que está na interface.
+
 ---
 
 
@@ -301,7 +302,7 @@ public class Gato : Animal
 ---
 
 
-# 🧩 Quando usar Interface vs Classe Abstrata
+## 🧩 Quando usar Interface vs Classe Abstrata
 
 | ✔ Use Interface quando: | ✔ Use Classe Abstrata quando: |
 |------------------------|-------------------------------|
