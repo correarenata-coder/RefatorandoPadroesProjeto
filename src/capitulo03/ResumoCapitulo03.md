@@ -69,7 +69,7 @@ Console.WriteLine(preco); // Saída: 80
 ```
 👉 O mesmo tipo (Livro) assume comportamentos diferentes dependendo da implementação concreta.
 
-"""# ⚙️ Tipagem no C#
+## ⚙️ Tipagem no C#
 
 ## ✔️ Validação em tempo de compilação
 
@@ -122,10 +122,14 @@ Um mesmo método ou objeto tenha comportamentos diferentes dependendo do context
 * **Em Java:** `@Override` | **Em C#:** `override`
 * **Em Java:** Overload | **Em C#:** Overload
 
-## Tipos de polimorfismo em C#
-1. Polimorfismo de sobrescrita (override) — em tempo de execução
+## 📚 Tipos de Polimorfismo em C#
+### 1️⃣ Polimorfismo de Sobrescrita (Override) — tempo de execução
 
-Acontece quando uma classe filha redefine um comportamento da classe pai.
+Acontece quando uma **classe filha redefine** um comportamento da classe pai.
+
+👉 O método é resolvido **em tempo de execução**, de acordo com o objeto real.
+
+
 
 <pre>
 public class Animal
@@ -163,9 +167,14 @@ animal = new Gato();
 animal.FazerSom(); // Miau}
 </pre>
 
-2. Polimorfismo de sobrecarga (overload) — em tempo de compilação
+---
 
-Aqui você tem vários métodos com o mesmo nome, mas com parâmetros diferentes.
+### 2️⃣ Polimorfismo de Sobrecarga (Overload) — tempo de compilação
+
+Ocorre quando existem **vários métodos com o mesmo nome**, mas com **parâmetros diferentes**.
+
+👉 O método é resolvido **em tempo de compilação**. diferentes.
+
 <pre>
 public class Calculadora
 {
@@ -182,8 +191,14 @@ public class Calculadora
 
 </pre>
 
-3. Polimorfismo com interfaces
-Você trabalha com abstração e não com implementação concreta.
+---
+
+### 3️⃣ Polimorfismo com Interfaces
+
+Você trabalha com **abstrações** ao invés de implementações concretas.
+
+👉 Permite trocar implementações sem alterar o código que consome a interface.
+
 <pre>
 public interface IPagamento
 {
@@ -214,13 +229,20 @@ IPagamento pagamento = new Pix();
 pagamento.Pagar();
 
 </pre>
+---
 
-
-## Interfaces vs classes abstratas
+# 🧩 Interfaces vs Classes Abstratas
 
 ## Interface (contrato)
 
-Uma interface define o que uma classe deve fazer, mas não diz como.
+Uma interface define **o que uma classe deve fazer**, mas não diz **como**.
+
+- Não possui implementação (regra geral)
+- Define apenas assinaturas de métodos
+- A classe é **obrigada a implementar tudo**
+
+👉 Ideal para **desacoplamento** e **flexibilidade**
+
 <pre>
 public interface IAnimal
 {
@@ -240,13 +262,20 @@ public class Cachorro : IAnimal
 </pre>
 
 A classe é obrigada a implementar tudo que está na interface.
+---
 
-## Classe Abstrata (base com comportamento)
 
-Uma classe abstrata pode ter:
+## 🔹 Classe Abstrata (Base com comportamento)
 
-Métodos com implementação
-Métodos sem implementação (abstract) => quando você quer que as classes filhas sejam obrigadas a implementar um comportamento específico.
+Uma classe abstrata pode conter:
+
+- ✔ Métodos com implementação  
+- ✔ Métodos sem implementação (`abstract`)
+
+👉 Métodos `abstract` existem quando você quer **forçar as classes filhas a implementarem um comportamento específico**
+
+👉 Também permite **reaproveitamento de código**
+
 <pre>
 public abstract class Animal
 {
@@ -268,6 +297,9 @@ public class Gato : Animal
     }
 }
 </pre>
+
+---
+
 
 # 🧩 Quando usar Interface vs Classe Abstrata
 
