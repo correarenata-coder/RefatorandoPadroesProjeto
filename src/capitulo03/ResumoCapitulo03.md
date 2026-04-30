@@ -111,22 +111,7 @@ x.ToString(); // ✅ funciona
 </pre>
 
 ## Polimorfismo
-Igual ao Java
-<pre>
-object variavel = "texto";
-variavel = 10;
-variavel = new Cliente();
-</pre>
-👉 Mesmo conceito: Um tipo genérico (object)pode referenciar qualquer tipo específico (string, int, Cliente).
-
-💡 Exemplo mais real
-<pre>
-List<string> lista = new List<string>();
-lista.Add("teste");
-
-// trocando implementação
-IList<string> lista2 = new List<string>();
-</pre>
+Um mesmo método ou objeto tenha comportamentos diferentes dependendo do contexto.
 
 ## Sobrescrita vs Sobrecarga
 
@@ -136,57 +121,157 @@ IList<string> lista2 = new List<string>();
 
 * **Em Java:** `@Override` | **Em C#:** `override`
 * **Em Java:** Overload | **Em C#:** Overload
-* 
-<pre>
-public class Estudante
-{
-    public string Nome { get; set; }
 
-    public override string ToString()
+## Tipos de polimorfismo em C#
+1. Polimorfismo de sobrescrita (override) — em tempo de execução
+
+Acontece quando uma classe filha redefine um comportamento da classe pai.
+
+<pre>
+public class Animal
+{
+    public virtual void FazerSom()
     {
-        return $"Nome: {Nome}";
+        Console.WriteLine("Som genérico");
+    }
+}
+
+public class Cachorro : Animal
+{
+    public override void FazerSom()
+    {
+        Console.WriteLine("Latido");
+    }
+}
+
+public class Gato : Animal
+{
+    public override void FazerSom()
+    {
+        Console.WriteLine("Miau");
     }
 }
 </pre>
 
-Chamando o comportamento original
+Uso :
 <pre>
 
-public override string ToString()
+Animal animal = new Cachorro();
+animal.FazerSom(); // Latido
+
+animal = new Gato();
+animal.FazerSom(); // Miau}
+</pre>
+
+2. Polimorfismo de sobrecarga (overload) — em tempo de compilação
+
+Aqui você tem vários métodos com o mesmo nome, mas com parâmetros diferentes.
+<pre>
+public class Calculadora
 {
-    var original = base.ToString();
-    return $"Nome: {Nome} | {original}";
+    public int Somar(int a, int b)
+    {
+        return a + b;
+    }
+
+    public double Somar(double a, double b)
+    {
+        return a + b;
+    }
+}
+
+</pre>
+
+3. Polimorfismo com interfaces
+Você trabalha com abstração e não com implementação concreta.
+<pre>
+public interface IPagamento
+{
+    void Pagar();
+}
+
+public class Cartao : IPagamento
+{
+    public void Pagar()
+    {
+        Console.WriteLine("Pagamento com cartão");
+    }
+}
+
+public class Pix : IPagamento
+{
+    public void Pagar()
+    {
+        Console.WriteLine("Pagamento com Pix");
+    }
 }
 </pre>
 
-## Interfaces e classes abstratas
+Uso :
+
 <pre>
-public interface IArma
+IPagamento pagamento = new Pix();
+pagamento.Pagar();
+
+</pre>
+
+
+## Interfaces vs classes abstratas
+
+## Interface (contrato)
+
+Uma interface define o que uma classe deve fazer, mas não diz como.
+<pre>
+public interface IAnimal
 {
-    int GetDano();
-    int GetBonusVelocidade();
-}
+    void FazerSom();
+}}
 </pre>
 
 Implementação:
-<pre>
-public class Adaga : IArma
+public class Cachorro : IAnimal
 {
-    public int GetDano() => 10;
-    public int GetBonusVelocidade() => 3;
-}
-</pre>
-
-## Classe abstrata
-<pre>
-public abstract class Arma
-{
-    public abstract int GetDano();
-    public abstract int GetBonusVelocidade();
-
-    public int DanoComArmaQuebrada()
+    public void FazerSom()
     {
-        return GetDano() / 2;
+        Console.WriteLine("Latido");
     }
 }
 </pre>
+
+A classe é obrigada a implementar tudo que está na interface.
+
+## Classe Abstrata (base com comportamento)
+
+Uma classe abstrata pode ter:
+
+Métodos com implementação
+Métodos sem implementação (abstract)
+<pre>
+public abstract class Animal
+{
+    public void Dormir()
+    {
+        Console.WriteLine("Dormindo...");
+    }
+
+    public abstract void FazerSom();
+}
+</pre>
+Implementação:
+<pre>
+public class Gato : Animal
+{
+    public override void FazerSom()
+    {
+        Console.WriteLine("Miau");
+    }
+}
+</pre>
+
+# 🧩 Quando usar Interface vs Classe Abstrata
+
+| ✔ Use Interface quando: | ✔ Use Classe Abstrata quando: |
+|------------------------|-------------------------------|
+| Quer desacoplar o sistema | Existe uma relação clara de herança ("é um") |
+| Precisa de flexibilidade | Você quer reaproveitar código |
+| Diferentes classes sem relação direta precisam ter o mesmo comportamento | Existe comportamento comum |

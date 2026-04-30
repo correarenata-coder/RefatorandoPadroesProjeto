@@ -6,10 +6,11 @@ using capitulo03._1_Polimorfismo;
 
 #region ChamadaPolimorfismo
 
-Livro livro = new LivroPromocional();
-var preco = livro.CalcularPrecoFinal();
+Animal animal = new Cachorro();
+animal.FazerSom(); // Latido
 
+animal = new Gato();
+animal.FazerSom(); // Miau}
 
-Console.WriteLine("Resposta é :" + preco); // Saída: 80 
 
 #endregion

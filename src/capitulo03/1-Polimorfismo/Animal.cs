@@ -4,11 +4,13 @@ using System.Text;
 
 namespace capitulo03._1_Polimorfismo
 {
-     public class Livro
+    public class Animal
     {
-        public virtual decimal CalcularPrecoFinal()
+        public virtual void FazerSom()
         {
-            return 100;
+            Console.WriteLine("Som generico");
         }
+
+
     }
 }

@@ -4,11 +4,11 @@ using System.Text;
 
 namespace capitulo03._1_Polimorfismo
 {
-    public class LivroPromocional : Livro
+    public class Gato :Animal
     {
-        public override decimal CalcularPrecoFinal()
+        public override void FazerSom()
         {
-            return  80m;
+            Console.WriteLine("Miau");
         }
     }
 }
