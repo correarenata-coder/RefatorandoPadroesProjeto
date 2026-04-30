@@ -229,6 +229,7 @@ public interface IAnimal
 </pre>
 
 Implementação:
+<pre>
 public class Cachorro : IAnimal
 {
     public void FazerSom()
@@ -245,7 +246,7 @@ A classe é obrigada a implementar tudo que está na interface.
 Uma classe abstrata pode ter:
 
 Métodos com implementação
-Métodos sem implementação (abstract)
+Métodos sem implementação (abstract) => quando você quer que as classes filhas sejam obrigadas a implementar um comportamento específico.
 <pre>
 public abstract class Animal
 {
