@@ -1,4 +1,4 @@
-﻿using capitulo04Factory;
+﻿using capitulo04FactoryAdicional;
 
 Console.WriteLine("(1)Bauru  (2)Frango  (3)Misto Quente  (4)Vegetariano");
 var lancheEscolhido = Convert.ToInt32(Console.ReadLine());

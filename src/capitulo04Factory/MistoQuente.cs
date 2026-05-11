@@ -1,4 +1,4 @@
-﻿namespace capitulo04Factory
+﻿namespace capitulo04FactoryAdicional
 {
     public class MistoQuente : Lanche
     {
