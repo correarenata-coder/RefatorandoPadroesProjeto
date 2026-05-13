@@ -1,6 +1,6 @@
 ﻿
 using capitulo06.ExemploLivro;
-using Capitulo06;
+using capitulo06;
 
 int idUsuario = 1;
 
