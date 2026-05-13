@@ -2,7 +2,7 @@
 
 Repositório dedicado ao **Clube de Leitura sobre desenvolvimento de software e carreira em tecnologia**.
 
-📸 Instagram: [@clubedeleituradev](https://instagram.com/leitura.dev)
+📸 Instagram: [@leitura.dev](https://instagram.com/leitura.dev)
 
 ## 📖 Livro 
 
