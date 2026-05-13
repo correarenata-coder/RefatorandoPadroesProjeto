@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Capitulo04_FactoryMethod_V2.Exemplo.DocumentCreator">
+    <Position X="10.5" Y="0.5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Exemplo\DocumentCreator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Capitulo04_FactoryMethod_V2.Exemplo.PdfDocument">
+    <Position X="3.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>Exemplo\PdfDocument.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Capitulo04_FactoryMethod_V2.Exemplo.PdfDocumentCreator">
+    <Position X="12" Y="3" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Exemplo\PdfDocumentCreator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Capitulo04_FactoryMethod_V2.Exemplo.WordDocument">
+    <Position X="6" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>Exemplo\WordDocument.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Capitulo04_FactoryMethod_V2.Exemplo.WordDocumentCreator">
+    <Position X="8.75" Y="3" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Exemplo\WordDocumentCreator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Capitulo04_FactoryMethod_V2.Exemplo.IDocument">
+    <Position X="5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>Exemplo\IDocument.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

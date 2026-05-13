@@ -17,6 +17,7 @@ var parametros = new ParametrosDeBusca(TipoDeBusca.POR_CATEGORIA, Engine.Elastic
 //};
 //var busca = new Busca
 
+
 busca.Por(parametros);
 
 CriterioDeBusca criterio = FabricaDeBusca.Criar(parametros).CriarCriterio();

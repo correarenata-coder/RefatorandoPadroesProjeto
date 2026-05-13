@@ -8,9 +8,10 @@
   <Project Path="capitulo04/capitulo04.csproj" Id="4a7cbc1b-1483-4d95-9b11-1089328dcdb9" />
   <Project Path="capitulo04Factory/capitulo04FactoryAdicional.csproj" Id="6eb03eea-1452-4a19-811d-e6c9e41800d5" />
   <Project Path="capitulo04FactoryMethod/capitulo04_FactoryMethod.csproj" Id="4c656918-2c50-4e66-b6d8-4c366b0039ed" />
+  <Project Path="Capitulo04_FactoryMethod_V2/Capitulo04_FactoryMethod_V2.csproj" Id="1b7b475e-d6a4-4521-89b0-e00d78ad6cb8" DisplayName="capitulo04_FactoryMethod_V2" />
   <Project Path="capitulo04_SimpleFactory/capitulo04_SimpleFactory.csproj" Id="eb0fc40e-2a2e-45d9-b38b-75be7c9004fd" />
   <Project Path="capitulo05/capitulo05.csproj" Id="e8af68ad-f367-4325-b8c5-7b01e0c4808d" />
   <Project Path="capitulo05_Refatorado/capitulo05_Refatorado.csproj" Id="4fe38195-11ab-435c-8e2c-7542d80530f1" />
-  <Project Path="Capitulo06/Capitulo06.csproj" Id="fb374eff-3680-4cf2-8d4d-0d21e1402576" />
+  <Project Path="Capitulo06/Capitulo06.csproj" Id="fb374eff-3680-4cf2-8d4d-0d21e1402576" DisplayName="capitulo06" />
   <Project Path="capitulo06_Refatorado/capitulo06_RefatoradoTemplate.csproj" Id="645bed94-e494-4bf6-8a3a-1e836806f9db" />
 </Solution>
