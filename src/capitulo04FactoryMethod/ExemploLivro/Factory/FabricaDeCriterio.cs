@@ -1,19 +1,32 @@
-﻿using System;
+﻿using capitulo04_FactoryMethod.ExemploLivro.Criterios;
+using capitulo04_FactoryMethod.ExemploLivro.Enum;
+using capitulo04_FactoryMethod.ExemploLivro.Model;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace capitulo04_FactoryMethod.ExemploLivro
+namespace capitulo04_FactoryMethod.ExemploLivro.Factory
 {
     public class FabricaDeCriterio
     {
         private readonly ParametrosDeBusca _parametros;
 
-        public FabricaDeCriterio(ParametrosDeBusca parametros)
+        public class FabricaDeCriterio
         {
-            _parametros = parametros;
+            public static ICriadorDeCriterio Criar(TipoDeBusca tipo)
+            {
+                return tipo switch
+                {
+                    TipoDeBusca.NORMAL => new CriterioNormal(),
+
+                    TipoDeBusca.PROMOCIONAL => new CriterioPromocional(),
+
+                    _ => throw new NotImplementedException()
+                };
+            }
         }
 
-        public CriterioDeBusca CriarCriterio()
+            public CriterioDeBusca CriarCriterio()
         {
             return _parametros.tipoDeBusca switch
             {

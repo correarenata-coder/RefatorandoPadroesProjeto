@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace capitulo04_FactoryMethod.ExemploLivro
+namespace capitulo04_FactoryMethod.ExemploLivro.Enum
 {
     public enum TipoDeBusca
     {

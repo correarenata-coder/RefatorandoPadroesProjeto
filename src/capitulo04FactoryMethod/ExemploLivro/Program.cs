@@ -1,29 +1,24 @@
 ﻿//#region FactoruMethod
 
 using capitulo04_FactoryMethod.ExemploLivro;
+using capitulo04_FactoryMethod.ExemploLivro.Criterios;
+using capitulo04_FactoryMethod.ExemploLivro.Enum;
+using capitulo04_FactoryMethod.ExemploLivro.Model;
+using capitulo04_FactoryMethod.ExemploLivro.Services;
 
 
-ServicoDeBusca servico = new ServicoDeBusca();
 
-Busca busca = new Busca(servico);
-
-var parametros = new ParametrosDeBusca(TipoDeBusca.POR_CATEGORIA, Engine.ElasticSearch);
-//{
-//    Engine = Engine.ElasticSearch,
-//    tipoDeBusca = TipoDeBusca.PROMOCIONAL,
-//    categoria = Categoria.ELETRONICOS,
-//     ordernarPor = OrdenarPor.PRECO,
-
-//};
-//var busca = new Busca
+var parametros = new ParametrosDeBusca(TipoDeBusca.POR_CATEGORIA,10,Categoria.TUDO, OrdenarPor.RECENTE, Engine.Banco);
 
 
-busca.Por(parametros);
+ICriadorDeCriterio criador =
+    new CriadorDeBuscaPromocional();
 
-CriterioDeBusca criterio = FabricaDeBusca.Criar(parametros).CriarCriterio();
+var criterio = criador.Criar(parametros);
 
 
-Console.WriteLine("Engine ?" + (criterio.engine ).ToString());
+
+Console.WriteLine("Engine ?" + (criterio.Engine ).ToString());
 Console.WriteLine("Paginação é 15 ?" + (criterio.Paginacao == 15).ToString());
 Console.WriteLine("Ordenação é Relevância ?" + (criterio.OrdenarPor == OrdenarPor.RELEVANCIA).ToString());
 Console.WriteLine("Categoria é TUDO ?" + (criterio.Categoria == Categoria.TUDO).ToString());
