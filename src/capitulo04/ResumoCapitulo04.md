@@ -100,13 +100,12 @@ public enum Categoria
 </pre>
 
 
-<pre>
+```csharp
 public enum OrdenarPor
     {
         RECENTE, PRECO, RELEVANCIA, NAO_ESPECIFICADO
     }
-</pre>
-
+```
 
 # 📌 Problema Sem Factory
 
