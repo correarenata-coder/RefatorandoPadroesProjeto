@@ -32,12 +32,12 @@ O sistema deverá suportar:
 - busca por categoria;
 - busca promocional.
 - 
-<pre>
+```csharp
 public enum TipoDeBusca
     {
         NORMAL, POR_CATEGORIA, PROMOCIONAL
     }
-</pre>
+```
 
 # 📌 2. Regras da Busca
 

@@ -13,7 +13,7 @@ Ideal principal do livro:
 3. separar regras de negócio da escolha da implementação.
 
 ## Tipos de Enumeração
-<pre>
+```csharp
 public enum TipoDeBusca
 {
     Normal,
@@ -22,11 +22,11 @@ public enum TipoDeBusca
 
 
 
-</pre>
+```
 
 ##Tipos de Models
 
-<pre>
+```csharp
 
 public class ParametrosDeBusca
     {
@@ -90,20 +90,20 @@ public class CriterioDeBusca
             """;
         }
     }
-</pre>
+```
 
 ##Fabrica de Critério
-<pre>
+```csharp
 
 
  public interface ICriadorDeCriterio
     {
         CriterioDeBusca Criar(ParametrosDeBusca parametros);
     }
-</pre>
+```
 
 ## Tipos de Imprementações concretas
-<pre>
+```csharp
 
 public class CriadorDeBuscaNormal : ICriadorDeCriterio
 {
@@ -131,11 +131,10 @@ public class CriadorDeBuscaPromocional : ICriadorDeCriterio
     }
 }
 
-</pre>
-
+```
 
 ## Fabrica 
-<pre>
+```csharp
 
 public class FabricaDeCriterio
     {
@@ -153,6 +152,63 @@ public class FabricaDeCriterio
             }
         
     }
-</pre>
 
-## Serviço 
+```
+## Serviço -Busca
+```csharp
+public class Busca
+{
+    private readonly ServicoDeBusca _servico;
+
+    public Busca(ServicoDeBusca servico)
+    {
+        _servico = servico;
+    }
+
+    public void Por(ParametrosDeBusca parametros)
+    {
+        ICriadorDeCriterio criador =
+            FabricaDeCriterio.Criar(
+                parametros.Tipo);
+
+        CriterioDeBusca criterio =
+            criador.Criar(parametros);
+
+        var lista =
+            _servico.RealizarBuscaCom(criterio);
+
+        EncontrarProdutosPorIds(lista);
+    }
+
+    private void EncontrarProdutosPorIds(
+        List<string> ids)
+    {
+        foreach (var id in ids)
+        {
+            Console.WriteLine(
+                $"Produto encontrado: {id}");
+        }
+    }
+}
+
+```
+
+### No program mudar para
+
+```csharp
+var parametros =
+    new ParametrosDeBusca(
+        TipoDeBusca.PROMOCIONAL,
+        10,
+        Categoria.TUDO,
+        OrdenarPor.RECENTE,
+        Engine.Banco);
+
+var servico =
+    new ServicoDeBusca();
+
+var busca =
+    new Busca(servico);
+
+busca.Por(parametros);
+```

@@ -2,6 +2,7 @@
 using capitulo05_Refatorado;
 using capitulo05_Refatorado.ExemploLivro;
 
+
 var servicoFaceNote = new ServicoFaceNoteLoginFake();
 
 var loginViaFaceNote = new LoginViaFaceNoteFake(servicoFaceNote);
