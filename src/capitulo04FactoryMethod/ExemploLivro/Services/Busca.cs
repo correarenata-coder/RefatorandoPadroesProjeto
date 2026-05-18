@@ -1,4 +1,6 @@
-﻿using capitulo04_FactoryMethod.ExemploLivro.Model;
+﻿using capitulo04_FactoryMethod.ExemploLivro.Criterios;
+using capitulo04_FactoryMethod.ExemploLivro.Factory;
+using capitulo04_FactoryMethod.ExemploLivro.Model;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -14,18 +16,23 @@ namespace capitulo04_FactoryMethod.ExemploLivro.Services
             _servico = servico;
         }
 
-        public void Por(ParametrosDeBusca parametros)
+        public CriterioDeBusca Por(ParametrosDeBusca parametros)
         {
-         
 
-            CriterioDeBusca criterio =
-            new FabricaDeCriterio(parametros).CriarCriterio();
 
-          
+            ICriadorDeCriterio criador =
+            FabricaDeCriterio.Criar(
+                parametros.TipoDeBusca);
 
-           var lista=  _servico.RealizarBuscaCom(criterio);
+
+
+            CriterioDeBusca criterio =  criador.Criar(parametros);
+
+            var lista=  _servico.RealizarBuscaCom(criterio);
 
             EncontrarProdutosPorIds(lista);
+
+            return criterio;
         }
 
         private void EncontrarProdutosPorIds(List<string> ids)

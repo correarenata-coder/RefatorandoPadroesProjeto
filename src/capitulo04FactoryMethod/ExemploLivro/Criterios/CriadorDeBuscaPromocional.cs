@@ -17,6 +17,5 @@ namespace capitulo04_FactoryMethod.ExemploLivro.Criterios
             );
         }
     }
-    {
-    }
+    
 }

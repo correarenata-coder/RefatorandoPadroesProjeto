@@ -8,13 +8,15 @@ using capitulo04_FactoryMethod.ExemploLivro.Services;
 
 
 
-var parametros = new ParametrosDeBusca(TipoDeBusca.POR_CATEGORIA,10,Categoria.TUDO, OrdenarPor.RECENTE, Engine.Banco);
+var parametros = new ParametrosDeBusca(TipoDeBusca.NORMAL,10,Categoria.TUDO, OrdenarPor.RECENTE, Engine.Banco);
 
+var servico =
+    new ServicoDeBusca();
 
-ICriadorDeCriterio criador =
-    new CriadorDeBuscaPromocional();
+var busca =
+    new Busca(servico);
 
-var criterio = criador.Criar(parametros);
+var criterio =busca.Por(parametros);
 
 
 
