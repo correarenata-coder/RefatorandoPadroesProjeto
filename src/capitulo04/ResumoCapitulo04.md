@@ -10,15 +10,28 @@ Neste capítulo, será abordado o padrão de projeto **Factory**, que é um dos 
 ## 🧩 O que é o padrão Factory?
 O padrão Factory é um **padrão de criação** que fornece uma interface para criar objetos em uma superclasse, mas permite que as subclasses alterem o tipo de objetos que serão criados.
 
-## ### 🔹 Vantagens do padrão Factory
+## 🔹 Vantagens do padrão Factory
 - **Desacoplamento**: O código cliente não precisa conhecer as classes concretas que estão sendo instanciadas, promovendo um baixo acoplamento.
 - **Flexibilidade**: Permite que o sistema seja facilmente estendido para criar novos tipos de objetos sem modificar o código cliente.
 - **Centralização da criação de objetos**: Facilita a manutenção e evolução do código, pois a lógica de criação está concentrada em um único lugar.	
 
-## Exemplo prático em C#
-Melhorar a busca em um site de compras.
+# 🛒 Exemplo Prático em C#
+## Cenário
 
-1. Definir os tipos diferentes de busca
+Imagine um sistema de e-commerce que possui diferentes tipos de busca de produtos.
+
+Dependendo do tipo de busca, critérios diferentes devem ser aplicados automaticamente.
+
+---
+
+# 🎯 1. Definir os tipos diferentes de busca
+
+O sistema deverá suportar:
+
+- busca normal;
+- busca por categoria;
+- busca promocional.
+- 
 <pre>
 public enum TipoDeBusca
     {
@@ -26,35 +39,49 @@ public enum TipoDeBusca
     }
 </pre>
 
-2. Espeficicar os campos da busca :
-a-) Quantidade de produtos exibidos por página, sendo 15 padrão
-b-) Categoria dos produtos
-c-) Ordem de exibição dos produtos
+# 📌 2. Regras da Busca
 
-Sobre as categorias:
-Normal => apenas o nome do produt precisa ser especificado ( padrão será por relevância)
-Por categoria => espeficicar categoria (padrão Normal), ordem se não for espeficicada será a "mais recente"
-Promocional => Ordem deve ser a "mais recente" não importando os outros valores
+Cada tipo de busca possui comportamentos específicos.
 
-<pre>
-public enum Categoria
-    {
-        TUDO, EM_PROMOCAO, ELETRONICOS
-    }
+---
+## 🔹 Campos da busca
+A busca poderá possuir:
 
-public enum OrdenarPor
-    {
-        RECENTE, PRECO, RELEVANCIA, NAO_ESPECIFICADO
-    }
-</pre>
+| Campo | Descrição |
+|---|---|
+| Categoria | Categoria dos produtos |
+| QuantidadePorPagina |  Quantidade de produtos exibidos por página, sendo 15 padrão |
+| Ordem | Ordem de exibição dos produtos |
 
-Com isso os parametros da busca terão os seguintes campos :
-a-) Tipo de busca => Indica o tipo de busca selecionado pelo usuário
-b-) resultado por página = > Indica quantos produtos devem ser exibidos
-c-) Categoria => define que tipo de produto deve ser pesquisado
-d-) ordenarPor => qual o critério da ordenação dos produtos
+---
+# 📌 3. Regras de negócio
 
-<pre>
+## 🔹 Busca Normal
+
+- Apenas o nome do produto é obrigatório;
+- A ordenação padrão será por relevância;
+- Quantidade padrão por página: **15 itens**.
+
+---
+
+## 🔹 Busca por Categoria
+
+- Deve informar a categoria;
+- Caso a ordenação não seja especificada, utilizar:
+  - `"MaisRecentes"`.
+
+---
+
+## 🔹 Busca Promocional
+
+- A ordenação será sempre:
+  - `"MaisRecentes"`;
+- Outros valores de ordenação devem ser ignorados.
+
+---
+# 📌 Estrutura Inicial da Classe de Parâmetros
+
+```csharp
  public class ParametrosDeBusca
     {
         public int resultadosPorPagina { get; set; } = 15;
@@ -62,74 +89,165 @@ d-) ordenarPor => qual o critério da ordenação dos produtos
         public TipoDeBusca tipoDeBusca { get; set; } = TipoDeBusca.NORMAL;
         public OrdenarPor ordernarPor { get; set; } = OrdenarPor.RELEVANCIA;
     }
-</pre>
+```
 
-
-Foi definica uma classe Busca que recebe ParametrosDeBusca e a partir dele cria CriterioDeBusca.
-Com o CriterioDeBusca definido a classe ServicodeBusca será usada para fazer a busca de fato.
+# 📌 Outras enumerações necessárias
 <pre>
-
- public class Busca
+public enum Categoria
     {
-        private ServicoDeBusca servicoDeBusca;
-        public Busca(ServicoDeBusca servicoDeBusca)
-        {
-            this.servicoDeBusca = servicoDeBusca;
-        }
-        public void por(ParametrosDeBusca parametros)
-        {
-            CriterioDeBusca criterio = criarCriterio(parametros);
-            List<String> idsDeResultado =
-                            servicoDeBusca.RealizarBuscaCom(criterio);
-            EncontrarProdutosPorIds(idsDeResultado);
-
-        }
+        TUDO, EM_PROMOCAO, ELETRONICOS
     }
-
-public CriterioDeBusca criarCriterio(ParametrosDeBusca parametros)
-        {
-            var criterio = new CriterioDeBusca
-            {
-                Paginacao = parametros.resultadosPorPagina,
-                Categoria = parametros.categoria
-            };
-            TipoDeBusca busca = parametros.tipoDeBusca;
-
-
-            if (busca == TipoDeBusca.PROMOCIONAL)
-            {
-                //	Busca	promocional	ignora	parâmetros	de	busca
-                criterio.Categoria = Categoria.EM_PROMOCAO;
-                criterio.OrdenarPor = OrdenarPor.RECENTE;
-            }
-            else if (busca == TipoDeBusca.POR_CATEGORIA)
-            {
-                criterio.Categoria = parametros.categoria;
-
-                if (parametros.categoria == Categoria.TUDO)
-                {
-                    // Se categoria não for especificada, volta para busca normal
-                    criterio.OrdenarPor = OrdenarPor.RELEVANCIA;
-                }
-                else
-                {
-                    // Se tiver categoria, ordena conforme parâmetro
-                    criterio.OrdenarPor = parametros.ordernarPor;
-                }
-            }
-            else
-            {   //Busca	normal
-                criterio.OrdenarPor = parametros.ordernarPor;
-            }
-            return criterio;
-        }
-
 </pre>
 
-Nesse exemplo o metodo criarCriterio ficou com vários "ifs" e dificil de manter.
-Seria interessante :
-a-) Criar uma classe para cada tipo de busca, cada uma com sua própria implementação do método criarCriterio.
-b-) Criar uma interface ou classe abstrata para definir o contrato do método criarCriterio, e cada classe de busca concreta implementaria essa interface ou estenderia a classe abstrata.
-c-) Utilizar um padrão de projeto Factory para criar as instâncias das classes de busca com base no tipo de busca selecionado pelo usuário, centralizando a lógica de criação e facilitando a manutenção do código.
-d-) Dessa forma, o código ficaria mais organizado, fácil de entender e manter, além de seguir os princípios de design orientado a objetos, como o princípio da responsabilidade única e o princípio da substituição de Liskov.
 
+<pre>
+public enum OrdenarPor
+    {
+        RECENTE, PRECO, RELEVANCIA, NAO_ESPECIFICADO
+    }
+</pre>
+
+
+# 📌 Problema Sem Factory
+
+Sem utilizar Factory, o código tende a ficar assim:
+
+```csharp
+if (parametros.Tipo == TipoDeBusca.NORMAL)
+{
+    return new BuscaNormal();
+}
+else if (parametros.Tipo == TipoDeBusca.POR_CATEGORIA)
+{
+    return new BuscaPorCategoria();
+}
+else
+{
+    return new BuscaPromocional();
+}
+```
+
+Com o crescimento do sistema:
+
+- o código fica difícil de manter;
+- regras começam a se espalhar;
+- novas buscas exigem alterações em vários pontos.
+
+---
+
+# 🏭 Aplicando o Factory
+
+## 📌 Interface Base
+
+```csharp
+public interface ICriterioDeBusca
+{
+    string Montar();
+}
+```
+
+---
+
+# 📌 Implementação: Busca Normal
+
+```csharp
+public class BuscaNormal : ICriterioDeBusca
+{
+    public string Montar()
+    {
+        return "Busca ordenada por relevância";
+    }
+}
+```
+
+---
+
+# 📌 Implementação: Busca por Categoria
+
+```csharp
+public class BuscaPorCategoria : ICriterioDeBusca
+{
+    public string Montar()
+    {
+        return "Busca por categoria ordenada por mais recentes";
+    }
+}
+```
+
+---
+
+# 📌 Implementação: Busca Promocional
+
+```csharp
+public class BuscaPromocional : ICriterioDeBusca
+{
+    public string Montar()
+    {
+        return "Busca promocional ordenada por mais recentes";
+    }
+}
+```
+
+---
+
+# 📌 Criando a Factory
+
+```csharp
+public static class FabricaDeBusca
+{
+    public static ICriterioDeBusca Criar(TipoDeBusca tipo)
+    {
+        return tipo switch
+        {
+            TipoDeBusca.NORMAL => new BuscaNormal(),
+
+            TipoDeBusca.POR_CATEGORIA => new BuscaPorCategoria(),
+
+            TipoDeBusca.PROMOCIONAL => new BuscaPromocional(),
+
+            _ => throw new ArgumentException("Tipo inválido")
+        };
+    }
+}
+```
+
+---
+
+# 📌 Utilizando a Factory
+
+```csharp
+class Program
+{
+    static void Main()
+    {
+        var criterio = FabricaDeBusca.Criar(TipoDeBusca.PROMOCIONAL);
+
+        Console.WriteLine(criterio.Montar());
+    }
+}
+```
+
+---
+
+# ✅ Benefícios Obtidos
+
+Após aplicar Factory:
+
+- o código ficou mais organizado;
+- regras ficaram centralizadas;
+- novas buscas podem ser adicionadas facilmente;
+- o sistema ficou desacoplado;
+- a manutenção ficou mais simples.
+
+---
+
+# 📌 Conclusão
+
+O padrão Factory é uma solução elegante para cenários onde a criação de objetos varia conforme regras de negócio.
+
+Ele ajuda a:
+
+- reduzir acoplamento;
+- melhorar manutenção;
+- facilitar expansão;
+- organizar responsabilidades.
