@@ -14,6 +14,8 @@
   <Project Path="capitulo05_Refatorado/capitulo05_Refatorado.csproj" Id="4fe38195-11ab-435c-8e2c-7542d80530f1" />
   <Project Path="capitulo06/capitulo06.csproj" />
   <Project Path="capitulo06_Refatorado/capitulo06_RefatoradoTemplate.csproj" Id="645bed94-e494-4bf6-8a3a-1e836806f9db" />
+  <Project Path="capitulo09/capitulo09.csproj" Id="68b0c713-919a-42de-a86a-98c67e41260f" />
+  <Project Path="capitulo09_Refatorado/capitulo09_RefatoradoBuilder.csproj" Id="72bfe274-3e7f-454d-bb03-03359ade6176" />
   <Project Path="capitulo07/capitulo07.csproj" Id="4c98b490-8f66-404d-bd96-133bda76b31e" />
   <Project Path="capitulo07_Refatorado_Adapter/capitulo07_Refatorado_Adapter.csproj" Id="33d76253-269b-4c9a-b0c6-8ddb80a9f1a7" />
   <Project Path="capitulo08/capitulo08.csproj" Id="11e88bfd-760d-4f98-9dbe-50a9aa0321ae" />
