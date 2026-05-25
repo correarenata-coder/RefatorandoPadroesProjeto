@@ -14,4 +14,6 @@
   <Project Path="capitulo05_Refatorado/capitulo05_Refatorado.csproj" Id="4fe38195-11ab-435c-8e2c-7542d80530f1" />
   <Project Path="capitulo06/capitulo06.csproj" />
   <Project Path="capitulo06_Refatorado/capitulo06_RefatoradoTemplate.csproj" Id="645bed94-e494-4bf6-8a3a-1e836806f9db" />
+  <Project Path="capitulo09/capitulo09.csproj" Id="68b0c713-919a-42de-a86a-98c67e41260f" />
+  <Project Path="capitulo09_Refatorado/capitulo09_RefatoradoBuilder.csproj" Id="72bfe274-3e7f-454d-bb03-03359ade6176" />
 </Solution>
